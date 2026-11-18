@@ -1,0 +1,10 @@
+BACKEND/node_modules
+FRONTEND/node_modules
+FRONTEND/dist
+**/.env
+**/.env.*
+!**/.env.example
+*.log
+coverage/
+.DS_Store
+Thumbs.db

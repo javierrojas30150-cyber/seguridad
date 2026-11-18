@@ -1,0 +1,23 @@
+FROM node:22-alpine
+
+WORKDIR /app
+
+# Copiar archivos de dependencias
+COPY package*.json ./
+
+# Instalar dependencias
+RUN npm ci --omit=dev
+
+# Copiar código de la aplicación
+COPY src/ ./src/
+COPY sql/ ./sql/
+COPY uploads/ ./uploads/
+
+# Crear directorio para uploads si no existe
+RUN mkdir -p uploads/contracts
+
+# Exponer puerto
+EXPOSE 4000
+
+# Comando para iniciar la aplicación
+CMD ["node", "src/app.js"]

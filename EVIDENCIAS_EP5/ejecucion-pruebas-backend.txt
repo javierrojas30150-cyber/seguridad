@@ -1,0 +1,50 @@
+﻿
+> cuidarteplus@1.0.0 test
+> node --test
+
+[0mPOST /autenticacion/login [32m200[0m 9.567 ms - 308[0m
+✔ login válido entrega un token firmado con el rol (110.9671ms)
+[0mPOST /autenticacion/login [33m401[0m 1.555 ms - 35[0m
+✔ login con contraseña incorrecta se rechaza (11.7317ms)
+[0mPOST /pacientes [32m201[0m 4.837 ms - 105[0m
+✔ médico autenticado puede crear un paciente válido (16.7443ms)
+[0mPOST /pacientes [32m201[0m 1.906 ms - 105[0m
+✔ administrador autenticado puede crear un paciente válido (11.6634ms)
+[0mPOST /pacientes [33m403[0m 4.487 ms - 80[0m
+✔ paciente no puede crear otro paciente (14.2303ms)
+[0mGET /pacientes/21 [32m200[0m 1.929 ms - 46[0m
+▶ paciente puede consultar solo su propio registro
+  ✔ registro propio (7.7174ms)
+[0mGET /pacientes/22 [33m403[0m 0.953 ms - 68[0m
+  ✔ registro de otra persona (6.4355ms)
+✔ paciente puede consultar solo su propio registro (16.0055ms)
+[0mPUT /pacientes/21 [32m200[0m 3.424 ms - 35[0m
+▶ paciente puede actualizar su registro, pero no el de otra persona
+  ✔ actualización propia (12.5811ms)
+[0mPUT /pacientes/22 [33m403[0m 1.372 ms - 75[0m
+  ✔ actualización ajena (7.6921ms)
+✔ paciente puede actualizar su registro, pero no el de otra persona (21.2087ms)
+[0mGET /examenes/71 [32m200[0m 3.060 ms - 48[0m
+▶ paciente puede consultar solo exámenes asociados a su cuenta
+  ✔ examen propio (8.8412ms)
+[0mGET /examenes/72 [33m404[0m 1.227 ms - 86[0m
+  ✔ examen de otra persona (7.5308ms)
+✔ paciente puede consultar solo exámenes asociados a su cuenta (17.5567ms)
+[0mGET /documentos/examen/71 [32m200[0m 1.791 ms - 70[0m
+▶ paciente puede ver y descargar documentos propios, pero no ajenos
+  ✔ documentos de examen propio (9.3961ms)
+[0mGET /documentos/81 [32m200[0m 1.719 ms - 28[0m
+  ✔ descarga de documento propio (7.666ms)
+[0mGET /documentos/examen/72 [33m403[0m 0.809 ms - 73[0m
+  ✔ documentos de examen ajeno (3.9745ms)
+[0mGET /documentos/82 [33m403[0m 0.669 ms - 73[0m
+  ✔ descarga de documento ajeno (4.035ms)
+✔ paciente puede ver y descargar documentos propios, pero no ajenos (26.8125ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1291.7196

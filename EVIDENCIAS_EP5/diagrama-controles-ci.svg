@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title description">
+  <title id="title">Flujo CI/CD y controles de calidad y seguridad de Cuidarte+</title>
+  <desc id="description">Flujo desde pull request hasta publicación de imágenes, controles actuales, controles de seguridad propuestos y principios de privacidad y cumplimiento.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10" fill="none" stroke="#516174" stroke-width="2"/>
+    </marker>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #182b3a; }
+      .title { font-size: 28px; font-weight: 700; }
+      .subtitle { font-size: 15px; fill: #526579; }
+      .head { font-size: 17px; font-weight: 700; }
+      .body { font-size: 14px; }
+      .small { font-size: 12px; }
+      .arrow { stroke: #516174; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .current { fill: #e7f5ef; stroke: #2f855a; stroke-width: 2; }
+      .planned { fill: #fff7e6; stroke: #c47a00; stroke-width: 2; stroke-dasharray: 7 5; }
+      .neutral { fill: #edf3fa; stroke: #46627d; stroke-width: 2; }
+      .policy { fill: #f0ebfb; stroke: #7654a6; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect width="1280" height="760" fill="#ffffff"/>
+  <text x="50" y="52" class="title">Cuidarte+ | Integración de calidad, seguridad y cumplimiento</text>
+  <text x="50" y="80" class="subtitle">Las actividades verdes existen en el workflow actual; las amarillas son controles propuestos, no ejecutados.</text>
+
+  <rect x="45" y="135" width="165" height="110" rx="12" class="neutral"/>
+  <text x="127" y="170" text-anchor="middle" class="head">Cambio</text>
+  <text x="127" y="197" text-anchor="middle" class="body">Pull request / push</text>
+  <text x="127" y="220" text-anchor="middle" class="small">revisión de código</text>
+
+  <rect x="265" y="115" width="255" height="150" rx="12" class="current"/>
+  <text x="392" y="150" text-anchor="middle" class="head">CI actual</text>
+  <text x="290" y="180" class="body">✓ Frontend: ESLint + build</text>
+  <text x="290" y="207" class="body">✓ Backend: sintaxis + npm test</text>
+  <text x="290" y="234" class="body">✓ Docker build (sin publicar)</text>
+
+  <rect x="575" y="115" width="240" height="150" rx="12" class="planned"/>
+  <text x="695" y="150" text-anchor="middle" class="head">Seguridad propuesta</text>
+  <text x="598" y="180" class="body">□ SAST y análisis SCA</text>
+  <text x="598" y="207" class="body">□ Secretos y SBOM en PR</text>
+  <text x="598" y="234" class="body">□ DAST en entorno QA</text>
+
+  <rect x="870" y="135" width="165" height="110" rx="12" class="current"/>
+  <text x="952" y="170" text-anchor="middle" class="head">Publicación</text>
+  <text x="952" y="197" text-anchor="middle" class="body">Docker build</text>
+  <text x="952" y="220" text-anchor="middle" class="small">GHCR en push/tag</text>
+
+  <rect x="1090" y="135" width="150" height="110" rx="12" class="neutral"/>
+  <text x="1165" y="170" text-anchor="middle" class="head">Despliegue</text>
+  <text x="1165" y="197" text-anchor="middle" class="body">Manual / QA</text>
+  <text x="1165" y="220" text-anchor="middle" class="small">no automatizado</text>
+
+  <path d="M210 190 H255" class="arrow"/>
+  <path d="M520 190 H565" class="arrow"/>
+  <path d="M815 190 H860" class="arrow"/>
+  <path d="M1035 190 H1080" class="arrow"/>
+
+  <rect x="45" y="335" width="1195" height="70" rx="12" class="policy"/>
+  <text x="642" y="365" text-anchor="middle" class="head">Controles transversales en cada cambio y liberación</text>
+  <text x="642" y="389" text-anchor="middle" class="body">Privacidad y minimización de datos · mínimo privilegio · autorización por rol · trazabilidad/auditoría · revisión de retención</text>
+
+  <rect x="45" y="455" width="360" height="210" rx="12" class="neutral"/>
+  <text x="225" y="490" text-anchor="middle" class="head">Gate de calidad</text>
+  <text x="75" y="525" class="body">• No integrar si falla lint, build o test.</text>
+  <text x="75" y="555" class="body">• Revisar regresiones funcionales y accesos.</text>
+  <text x="75" y="585" class="body">• Registrar artefactos, versión y responsable.</text>
+  <text x="75" y="625" class="small">Estado: lint/build/tests en CI; seguridad por ampliar.</text>
+
+  <rect x="460" y="455" width="360" height="210" rx="12" class="planned"/>
+  <text x="640" y="490" text-anchor="middle" class="head">Gate de seguridad planificado</text>
+  <text x="490" y="525" class="body">• Bloquear secretos y dependencias críticas.</text>
+  <text x="490" y="555" class="body">• Revisar hallazgos antes de publicar.</text>
+  <text x="490" y="585" class="body">• DAST solo contra QA autorizado.</text>
+  <text x="490" y="625" class="small">No afirmar escaneo hasta integrarlo y ejecutarlo.</text>
+
+  <rect x="875" y="455" width="365" height="210" rx="12" class="policy"/>
+  <text x="1057" y="490" text-anchor="middle" class="head">Cumplimiento y mantenimiento</text>
+  <text x="905" y="525" class="body">• Ley 19.628 y preparación Ley 21.719.</text>
+  <text x="905" y="555" class="body">• Gestión de incidentes y solicitudes de titulares.</text>
+  <text x="905" y="585" class="body">• Parches, backups y revisión de permisos.</text>
+  <text x="905" y="625" class="small">Revisar con responsable de privacidad y asesoría legal.</text>
+
+  <text x="50" y="715" class="small">Leyenda: verde = implementado; amarillo discontinuo = propuesto; azul/violeta = proceso y principios.</text>
+</svg>
